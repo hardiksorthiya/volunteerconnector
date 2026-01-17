@@ -8,6 +8,7 @@ import { SidebarProvider } from './contexts/SidebarContext';
 // Components
 import Sidebar from './components/Sidebar';
 import Header from './components/Header';
+import Footer from './components/Footer';
 import { SidebarWrapper } from './components/SidebarWrapper';
 import Home from './components/Home';
 
@@ -28,6 +29,9 @@ import RoleManagement from './pages/RoleManagement';
 import PermissionsManagement from './pages/PermissionsManagement';
 import Profile from './pages/Profile';
 import EditProfile from './pages/EditProfile';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsConditions from './pages/TermsConditions';
+import HelpSupport from './pages/HelpSupport';
 
 // Protected Route Component
 const ProtectedRoute = ({ children }) => {
@@ -51,6 +55,7 @@ const AppContent = () => {
         <SidebarWrapper>
           <Sidebar />
           <Header />
+          <Footer />
         </SidebarWrapper>
       )}
       <Routes>
@@ -71,6 +76,9 @@ const AppContent = () => {
         <Route path="/activities/:id" element={<ProtectedRoute><ActivityDetail /></ProtectedRoute>} />
         <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
         <Route path="/profile/edit" element={<ProtectedRoute><EditProfile /></ProtectedRoute>} />
+        <Route path="/privacy-policy" element={<ProtectedRoute><PrivacyPolicy /></ProtectedRoute>} />
+        <Route path="/terms-conditions" element={<ProtectedRoute><TermsConditions /></ProtectedRoute>} />
+        <Route path="/help-support" element={<ProtectedRoute><HelpSupport /></ProtectedRoute>} />
         <Route path="/history" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
         <Route path="/settings" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
         <Route path="*" element={<Navigate to={token ? "/dashboard" : "/login"} replace />} />

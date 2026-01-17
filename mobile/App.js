@@ -18,6 +18,9 @@ import SettingsScreen from './src/screens/SettingsScreen';
 import ProfileScreen from './src/screens/ProfileScreen';
 import EditProfileScreen from './src/screens/EditProfileScreen';
 import ChangePasswordScreen from './src/screens/ChangePasswordScreen';
+import HelpSupportScreen from './src/screens/HelpSupportScreen';
+import TermsConditionsScreen from './src/screens/TermsConditionsScreen';
+import PrivacyPolicyScreen from './src/screens/PrivacyPolicyScreen';
 import { HomeIcon, ActivityIcon, ChatIcon, SettingsIcon } from './src/components/Icons';
 
 const Stack = createNativeStackNavigator();
@@ -202,6 +205,27 @@ export default function App() {
         <Stack.Screen 
           name="ChangePassword" 
           component={ChangePasswordScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen 
+          name="HelpSupport" 
+          component={HelpSupportScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen 
+          name="TermsConditions" 
+          component={TermsConditionsScreen}
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen 
+          name="PrivacyPolicy" 
+          component={PrivacyPolicyScreen}
           options={{
             headerShown: false,
           }}

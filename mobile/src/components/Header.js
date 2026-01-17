@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import { NotificationIcon } from './Icons';
 
 const Header = ({ onNotificationPress }) => {
   return (
@@ -14,16 +13,6 @@ const Header = ({ onNotificationPress }) => {
           <Text style={styles.logoSubtext}>Connect</Text>
         </View>
 
-        {/* Notification Icon */}
-        <TouchableOpacity 
-          style={styles.notificationButton}
-          onPress={onNotificationPress}
-        >
-          <NotificationIcon size={24} color="#1f2937" />
-          <View style={styles.notificationBadge}>
-            <Text style={styles.notificationBadgeText}>3</Text>
-          </View>
-        </TouchableOpacity>
       </View>
     </View>
   );

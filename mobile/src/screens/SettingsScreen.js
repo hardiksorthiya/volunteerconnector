@@ -99,33 +99,51 @@ const SettingsScreen = () => {
           </TouchableOpacity>
         </View>
 
-        <View style={styles.section}>
-          <Text style={styles.sectionTitle}>Preferences</Text>
-          <TouchableOpacity style={styles.settingItem}>
-            <Text style={styles.settingLabel}>Notifications</Text>
-            <Text style={styles.settingArrow}>›</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.settingItem}>
-            <Text style={styles.settingLabel}>Language</Text>
-            <Text style={styles.settingArrow}>›</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.settingItem}>
-            <Text style={styles.settingLabel}>Theme</Text>
-            <Text style={styles.settingArrow}>›</Text>
-          </TouchableOpacity>
-        </View>
 
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>About</Text>
-          <TouchableOpacity style={styles.settingItem}>
+          <TouchableOpacity 
+            style={styles.settingItem}
+            onPress={() => {
+              try {
+                console.log('Navigating to HelpSupport...');
+                navigation.navigate('HelpSupport');
+              } catch (error) {
+                console.error('Navigation error:', error);
+                Alert.alert('Error', 'Failed to open Help & Support. Please try again.');
+              }
+            }}
+          >
             <Text style={styles.settingLabel}>Help & Support</Text>
             <Text style={styles.settingArrow}>›</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.settingItem}>
+          <TouchableOpacity 
+            style={styles.settingItem}
+            onPress={() => {
+              try {
+                console.log('Navigating to TermsConditions...');
+                navigation.navigate('TermsConditions');
+              } catch (error) {
+                console.error('Navigation error:', error);
+                Alert.alert('Error', 'Failed to open Terms & Conditions. Please try again.');
+              }
+            }}
+          >
             <Text style={styles.settingLabel}>Terms & Conditions</Text>
             <Text style={styles.settingArrow}>›</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.settingItem}>
+          <TouchableOpacity 
+            style={styles.settingItem}
+            onPress={() => {
+              try {
+                console.log('Navigating to PrivacyPolicy...');
+                navigation.navigate('PrivacyPolicy');
+              } catch (error) {
+                console.error('Navigation error:', error);
+                Alert.alert('Error', 'Failed to open Privacy Policy. Please try again.');
+              }
+            }}
+          >
             <Text style={styles.settingLabel}>Privacy Policy</Text>
             <Text style={styles.settingArrow}>›</Text>
           </TouchableOpacity>
